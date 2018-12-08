@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/mike/.nvm/versions/node/v10.12.0/bin/node /Users/mike/.nvm/versions/node/v10.12.0/bin/yarn add react-helmet
+  /Users/mike/.nvm/versions/node/v10.12.0/bin/node /Users/mike/.nvm/versions/node/v10.12.0/bin/yarn
 
 PATH: 
   /Users/mike/.nvm/versions/node/v10.12.0/bin:/usr/local/bin:/Applications/MacVim.app/Contents/MacOS:/usr/local/share/python/easy_install:/Users/michael.probber/.rvm/gems/ruby-1.9.3-p547/bin:/Users/michael.probber/.rvm/gems/ruby-1.9.3-p547@global/bin:/Users/michael.probber/.rvm/rubies/ruby-1.9.3-p547/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/Users/michael.probber/.rvm/bin:/Applications/MacVim.app/Contents/MacOS/Vim:/usr/local/texlive/2016basic/bin/universal-darwin
@@ -44,17 +44,18 @@ npm manifest:
       "query-string": "^6.2.0",
       "react": "^16.5.2",
       "react-dom": "^16.5.2",
+      "react-helmet": "^5.2.0",
       "spotify-web-api-node": "^4.0.0",
       "styled-components": "^4.0.2",
       "superagent": "^4.0.0-beta.5",
       "uuid": "^3.3.2",
       "xml2js": "^0.4.19",
-      "@mprobber/static-build": "latest"
+      "@mprobber/static-build": "latest",
+      "@mprobber/publish-pages": "latest"
     },
     "scripts": {
       "start": "static-dev",
-      "build": "yarn build:static && yarn workspace scripts publish-pages $PWD",
-      "build:static": "webpack --mode=\"production\"",
+      "build": "static-build && publish-pages $PWD",
       "compile-traktor": "bin/update-traktor-library"
     },
     "peerDependencies": {
@@ -207,6 +208,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
     integrity sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=
   
+  deep-equal@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/deep-equal/-/deep-equal-1.0.1.tgz#f5d260292b660e084eff4cdbc9f08ad3247448b5"
+    integrity sha1-9dJgKStmDghO/0zbyfCK0yR0SLU=
+  
   delayed-stream@~1.0.0:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/delayed-stream/-/delayed-stream-1.0.0.tgz#df3ae199acadfb7d440aaae0b29e2272b24ec619"
@@ -236,6 +242,11 @@ Lockfile:
     version "2.0.2"
     resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
     integrity sha1-Cr9PHKpbyx96nYrMbepPqqBLrJs=
+  
+  exenv@^1.2.1:
+    version "1.2.2"
+    resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
+    integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
   
   extend@^3.0.0:
     version "3.0.2"
@@ -498,6 +509,16 @@ Lockfile:
       prop-types "^15.6.2"
       scheduler "^0.11.2"
   
+  react-helmet@^5.2.0:
+    version "5.2.0"
+    resolved "https://registry.yarnpkg.com/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"
+    integrity sha1-qBgR3yExOm1VxfBYxK66XW89l6c=
+    dependencies:
+      deep-equal "^1.0.1"
+      object-assign "^4.1.1"
+      prop-types "^15.5.4"
+      react-side-effect "^1.1.0"
+  
   react-is@^16.3.2, react-is@^16.6.0:
     version "16.6.3"
     resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.6.3.tgz#d2d7462fcfcbe6ec0da56ad69047e47e56e7eac0"
@@ -507,6 +528,14 @@ Lockfile:
     version "3.0.4"
     resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
     integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
+  
+  react-side-effect@^1.1.0:
+    version "1.1.5"
+    resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.1.5.tgz#f26059e50ed9c626d91d661b9f3c8bb38cd0ff2d"
+    integrity sha512-Z2ZJE4p/jIfvUpiUMRydEVpQRf2f8GMHczT6qLcARmX7QRb28JDBTpnM2g/i5y/p7ZDEXYGHWg0RbhikE+hJRw==
+    dependencies:
+      exenv "^1.2.1"
+      shallowequal "^1.0.1"
   
   react@^16.5.2:
     version "16.6.3"
@@ -572,6 +601,11 @@ Lockfile:
     version "1.0.5"
     resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
     integrity sha1-KQy7Iy4waULX1+qbg3Mqt4VvgoU=
+  
+  shallowequal@^1.0.1:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/shallowequal/-/shallowequal-1.1.0.tgz#188d521de95b9087404fd4dcb68b13df0ae4e7f8"
+    integrity sha512-y0m1JoUZSlPAjXVtPPW70aZWfIL/dSP7AFkRnniLCrK/8MDKog3TySTBmckD+RObVxH0v4Tox67+F14PdED2oQ==
   
   spotify-web-api-node@^4.0.0:
     version "4.0.0"
