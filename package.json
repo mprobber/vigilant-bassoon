@@ -3,18 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "dotenv": "^6.1.0",
+    "dropbox": "^4.0.13",
+    "fast-xml-parser": "^3.12.7",
+    "isomorphic-fetch": "^2.2.1",
+    "js-combinatorics": "^0.5.4",
+    "opn": "^5.4.0",
+    "polished": "^2.3.0",
+    "query-string": "^6.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "spotify-web-api-node": "^4.0.0",
     "styled-components": "^4.0.2",
-    "superagent": "^4.0.0-beta.5"
+    "superagent": "^4.0.0-beta.5",
+    "uuid": "^3.3.2",
+    "xml2js": "^0.4.19"
   },
   "scripts": {
     "start": "webpack-dev-server",
     "build": "yarn build:static && yarn workspace scripts publish-pages $PWD",
-    "build:static": "webpack --mode=\"production\""
+    "build:static": "webpack --mode=\"production\"",
+    "compile-traktor": "bin/update-traktor-library"
   },
   "peerDependencies": {
     "webpack-dev-server": "^3.1.10"
   }
 }
-
