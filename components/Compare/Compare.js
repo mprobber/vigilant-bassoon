@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import styled from 'styled-components';
-import type BaseService from 'vigilant-bassoon/Services/Service';
+import type BaseService from '../../Services/Service';
 
 type PropsType = { serviceA: BaseService, serviceB: BaseService };
 

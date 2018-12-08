@@ -2,10 +2,9 @@
 import React from 'react';
 import { observer } from 'mobx-react';
 import styled from 'styled-components';
-import BaseService from 'vigilant-bassoon/services/Service';
-import Compare from './components/Compare';
-import Button from './components/Button';
-import auth from 'vigilant-bassoon/lib/auth';
+import BaseService from '../../services/Service';
+import { Compare, Button } from '../../components';
+import auth from '../../lib/auth';
 
 type StateType = { serviceA: BaseService | null, serviceB: BaseService | null };
 

@@ -1,5 +1,5 @@
 {
-  "name": "vigilant-bassoon",
+  "name": "@mprobber/vigilant-bassoon",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,21 +8,25 @@
     "fast-xml-parser": "^3.12.7",
     "isomorphic-fetch": "^2.2.1",
     "js-combinatorics": "^0.5.4",
+    "mobx": "^5.7.0",
+    "mobx-react": "^5.4.2",
     "opn": "^5.4.0",
     "polished": "^2.3.0",
     "query-string": "^6.2.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-helmet": "^5.2.0",
     "spotify-web-api-node": "^4.0.0",
     "styled-components": "^4.0.2",
     "superagent": "^4.0.0-beta.5",
     "uuid": "^3.3.2",
-    "xml2js": "^0.4.19"
+    "xml2js": "^0.4.19",
+    "@mprobber/static-build": "1.0.0",
+    "@mprobber/publish-pages": "1.0.0"
   },
   "scripts": {
-    "start": "webpack-dev-server",
-    "build": "yarn build:static && yarn workspace scripts publish-pages $PWD",
-    "build:static": "webpack --mode=\"production\"",
+    "start": "static-dev",
+    "build": "static-build && publish-pages $PWD",
     "compile-traktor": "bin/update-traktor-library"
   },
   "peerDependencies": {

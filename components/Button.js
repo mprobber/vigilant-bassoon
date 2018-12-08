@@ -2,7 +2,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import { transparentize, darken, lighten } from 'polished';
-import type BaseService from 'vigilant-bassoon/services/Service';
+import type BaseService from '../services/Service';
 
 type PropsType = {
   service: BaseService,
