@@ -21,8 +21,8 @@
     "superagent": "^4.0.0-beta.5",
     "uuid": "^3.3.2",
     "xml2js": "^0.4.19",
-    "@mprobber/static-build": "1.0.0",
-    "@mprobber/publish-pages": "1.0.0"
+    "@mprobber/static-build": "latest",
+    "@mprobber/publish-pages": "latest"
   },
   "scripts": {
     "start": "static-dev",
